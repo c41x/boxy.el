@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 ;; box api (in progress)
 (setq lexical-binding t)
 (defun boxy:hide-overlay (ov)
@@ -25,7 +26,7 @@
 
 (defun boxy:line (line column width frame-type text)
   (save-excursion
-    (goto-line line)
+    (goto-char (point-min)) (forward-line (1- line))
     ;; delete all boxes in this line
     (mapc 'boxy:delete-if-box (boxy:overlays-in-this-line))
     (let ((column-offset (+ (line-beginning-position) column))
