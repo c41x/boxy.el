@@ -119,4 +119,6 @@
 ;; (boxy)
 ;; (remove-overlays)
 
+;;(boxy-centered 30 (mapcar (function buffer-name) (buffer-list)) '(("b" . boxy-close)))
+
 (provide 'boxy)
